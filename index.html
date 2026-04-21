@@ -4,54 +4,67 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>¿Qué tipo de mente de datos tienes? · ValClabs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Cabinet+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
 :root{
-  --coral:#D85A30;--coral-d:#993C1D;
+  --coral:#D85A30;--coral-d:#b84a22;
   --teal:#085041;--teal-m:#1D9E75;--teal-l:#E1F5EE;
   --purple:#534AB7;--purple-l:#EEEDFE;
   --amber:#FAEEDA;--amber-m:#EF9F27;
-  --dark:#2C2C2A;--mid:#888780;--off:#FAFAF7;
+  --dark:#1A1A18;--mid:#888780;--off:#FFFFFF;
+  --border:#EBEBEB;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--dark);min-height:100vh;overflow-x:hidden}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:var(--dark);min-height:100vh;overflow-x:hidden}
 .screen{display:none;min-height:100vh;flex-direction:column;animation:fadein .4s ease}
 .screen.on{display:flex}
-@keyframes fadein{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadein{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 
-/* INTRO */
-#s0{background:var(--teal);align-items:center;justify-content:center;padding:2.5rem 1.75rem;text-align:center;position:relative;overflow:hidden}
-#s0::before{content:'🧠';position:absolute;font-size:220px;opacity:.05;bottom:-50px;right:-40px;pointer-events:none}
-.logo{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:#ffffff44;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:2rem}
-.intro-badge{background:#ffffff20;color:#ffffffcc;font-size:12px;font-weight:500;padding:5px 14px;border-radius:20px;margin-bottom:1.25rem;display:inline-block}
-.intro-title{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:white;line-height:1.15;margin-bottom:.85rem}
-.intro-title em{color:var(--amber-m);font-style:normal}
-.intro-sub{font-size:15px;color:#ffffffaa;line-height:1.7;margin-bottom:.5rem;max-width:310px}
-.intro-sub b{color:white}
-.intro-pills{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:1.1rem 0 1.75rem}
-.pill{background:#ffffff15;color:#ffffffbb;font-size:12px;padding:4px 12px;border-radius:20px}
-.btn-start{background:var(--coral);color:white;border:none;border-radius:30px;padding:1rem 2.5rem;font-family:'Syne',sans-serif;font-size:16px;font-weight:800;cursor:pointer;transition:transform .15s,background .2s;box-shadow:0 4px 24px #D85A3044}
-.btn-start:hover{background:var(--coral-d);transform:scale(1.03)}
+/* ── INTRO ── */
+#s0{background:#fff;align-items:center;justify-content:center;padding:3rem 1.75rem;text-align:center;position:relative;overflow:hidden}
+#s0::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 0%, #E1F5EE 0%, transparent 70%);pointer-events:none}
+#s0::after{content:'🧠';position:absolute;font-size:200px;opacity:.04;bottom:-40px;right:-20px;pointer-events:none}
+
+.logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;color:var(--teal-m);letter-spacing:2px;text-transform:uppercase;margin-bottom:2.5rem;display:flex;align-items:center;justify-content:center;gap:6px}
+.logo span{color:var(--mid);font-weight:400}
+
+.intro-badge{background:var(--teal-l);color:var(--teal);font-size:12px;font-weight:600;padding:6px 16px;border-radius:30px;margin-bottom:1.5rem;display:inline-block;letter-spacing:.3px}
+
+.intro-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:800;color:var(--dark);line-height:1.1;margin-bottom:1rem;letter-spacing:-1px}
+.intro-title em{color:var(--teal-m);font-style:italic}
+
+.intro-sub{font-size:15px;color:var(--mid);line-height:1.7;margin-bottom:.5rem;max-width:300px}
+.intro-sub b{color:var(--dark)}
+
+.intro-pills{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:1.25rem 0 2rem}
+.pill{background:#fff;border:1.5px solid var(--border);color:var(--dark);font-size:12px;font-weight:500;padding:5px 13px;border-radius:20px}
+
+.btn-start{background:var(--dark);color:white;border:none;border-radius:14px;padding:1rem 2.5rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,0,0,.15);letter-spacing:.2px}
+.btn-start:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.2)}
 .btn-start:active{transform:scale(.97)}
-.time-pill{display:inline-flex;align-items:center;gap:6px;background:#ffffff12;border-radius:20px;padding:5px 14px;font-size:12px;color:#ffffff88;margin-top:.85rem}
 
-/* PROGRESO */
-.prog-wrap{background:white;padding:.85rem 1.5rem;border-bottom:1px solid #f0ede4;position:sticky;top:0;z-index:10}
-.prog-top{display:flex;justify-content:space-between;font-size:11px;color:var(--mid);margin-bottom:6px}
-.prog-top b{color:var(--teal-m);font-weight:600}
-.prog-bar{height:4px;background:#f0ede4;border-radius:10px;overflow:hidden}
+.time-pill{display:inline-flex;align-items:center;gap:6px;background:#f5f5f3;border-radius:20px;padding:6px 14px;font-size:12px;color:var(--mid);margin-top:1rem;font-weight:500}
+
+/* ── PROGRESO ── */
+.prog-wrap{background:#fff;padding:.85rem 1.5rem;border-bottom:1.5px solid var(--border);position:sticky;top:0;z-index:10}
+.prog-top{display:flex;justify-content:space-between;font-size:11px;font-weight:600;color:var(--mid);margin-bottom:7px;letter-spacing:.3px;text-transform:uppercase}
+.prog-top b{color:var(--teal-m)}
+.prog-bar{height:3px;background:#f0f0ef;border-radius:10px;overflow:hidden}
 .prog-fill{height:100%;background:linear-gradient(90deg,var(--teal-m),var(--teal));border-radius:10px;transition:width .5s ease}
 
-/* PREGUNTA */
-.q-screen{background:var(--off)}
-.q-top{padding:1.5rem 1.5rem 1.1rem;background:var(--teal)}
-.q-num{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:#ffffff66;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.5rem}
-.q-text{font-family:'Syne',sans-serif;font-size:21px;font-weight:800;color:white;line-height:1.25}
-.q-text em{color:var(--amber-m);font-style:normal}
-.q-body{padding:1.25rem 1.5rem;flex:1}
+/* ── PREGUNTA ── */
+.q-screen{background:#fff}
+.q-top{padding:1.75rem 1.5rem 1.25rem;background:#fff;border-bottom:1.5px solid var(--border)}
+.q-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;color:var(--teal-m);letter-spacing:2px;text-transform:uppercase;margin-bottom:.6rem}
+.q-text{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--dark);line-height:1.25;letter-spacing:-.4px}
+.q-text em{color:var(--teal-m);font-style:italic}
+.q-body{padding:1.25rem 1.5rem;flex:1;background:#fafafa}
 
-.context{background:white;border-radius:16px;border:1px solid #ede9df;padding:1rem 1.1rem;margin-bottom:1.1rem;position:relative;overflow:hidden;font-size:14px;color:var(--dark);line-height:1.65}
-.context::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:4px 0 0 4px}
+.context{background:#fff;border-radius:16px;border:1.5px solid var(--border);padding:1rem 1.1rem;margin-bottom:1.1rem;position:relative;overflow:hidden;font-size:14px;color:var(--dark);line-height:1.65}
+.context::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;border-radius:3px 0 0 3px}
 .ctx-teal::before{background:var(--teal-m)}
 .ctx-coral::before{background:var(--coral)}
 .ctx-purple::before{background:var(--purple)}
@@ -60,72 +73,76 @@ body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--dark);mi
 .context .ctx-inner{padding-left:.6rem}
 
 /* VISUAL mini */
-.mini-vis{background:white;border-radius:14px;border:1px solid #ede9df;padding:1rem;margin-bottom:1rem}
+.mini-vis{background:#fff;border-radius:14px;border:1.5px solid var(--border);padding:1rem;margin-bottom:1rem}
 .mrow{display:flex;align-items:center;gap:8px;margin-bottom:8px}
 .mrow:last-child{margin-bottom:0}
-.mlabel{font-size:12px;color:var(--mid);min-width:75px}
+.mlabel{font-size:12px;font-weight:600;color:var(--mid);min-width:40px}
 .micons{display:flex;gap:2px;flex-wrap:wrap}
 .micon{font-size:14px;line-height:1}
-.mval{font-size:11px;color:var(--mid);margin-left:3px}
+.mval{font-size:11px;font-weight:700;color:var(--dark);margin-left:4px}
 
-/* OPCIONES */
-.opts-label{font-size:11px;font-weight:500;color:var(--mid);text-transform:uppercase;letter-spacing:.8px;margin-bottom:.75rem}
+/* ── OPCIONES ── */
+.opts-label{font-size:11px;font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:1px;margin-bottom:.85rem}
 .opts{display:grid;gap:9px}
-.opt{background:white;border:2px solid #ede9df;border-radius:16px;padding:.9rem 1.1rem;cursor:pointer;text-align:left;font-family:'DM Sans',sans-serif;transition:all .2s;display:flex;align-items:flex-start;gap:10px}
-.opt:hover{transform:translateX(4px)}
+.opt{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:.9rem 1.1rem;cursor:pointer;text-align:left;font-family:'Plus Jakarta Sans',sans-serif;transition:all .18s;display:flex;align-items:flex-start;gap:10px}
+.opt:hover{transform:translateX(4px);border-color:#ccc}
 .opt:hover.o-teal{border-color:var(--teal-m);background:var(--teal-l)}
 .opt:hover.o-coral{border-color:var(--coral);background:#fff5f2}
 .opt:hover.o-purple{border-color:var(--purple);background:var(--purple-l)}
 .opt:hover.o-amber{border-color:var(--amber-m);background:var(--amber)}
 .opt .oi{font-size:20px;flex-shrink:0;margin-top:1px}
-.opt .ot b{display:block;font-size:14px;font-weight:600;color:var(--dark);margin-bottom:2px}
-.opt .ot span{font-size:12px;color:var(--mid)}
+.opt .ot b{display:block;font-size:14px;font-weight:700;color:var(--dark);margin-bottom:2px}
+.opt .ot span{font-size:12px;color:var(--mid);font-weight:400}
 .opt.chosen.o-teal{border-color:var(--teal-m);background:var(--teal-l);pointer-events:none}
 .opt.chosen.o-coral{border-color:var(--coral);background:#fff5f2;pointer-events:none}
 .opt.chosen.o-purple{border-color:var(--purple);background:var(--purple-l);pointer-events:none}
 .opt.chosen.o-amber{border-color:var(--amber-m);background:var(--amber);pointer-events:none}
-.opt.unchosen{opacity:.35;pointer-events:none}
+.opt.unchosen{opacity:.3;pointer-events:none}
 
-/* RESULTADO */
-#resultado{align-items:stretch;justify-content:flex-start}
-.res-header{padding:2rem 1.5rem 1.5rem;text-align:center;position:relative;overflow:hidden}
-.res-emoji{font-size:60px;display:block;margin-bottom:.75rem;animation:boing .7s ease infinite alternate}
-@keyframes boing{from{transform:translateY(0) scale(1)}to{transform:translateY(-8px) scale(1.05)}}
-.res-badge{display:inline-block;font-size:11px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:.75rem;letter-spacing:.5px}
-.res-title{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:white;line-height:1.2;margin-bottom:.5rem}
-.res-title em{font-style:normal}
-.res-sub{font-size:14px;color:#ffffffcc;line-height:1.65;max-width:300px;margin:0 auto}
-.res-body{padding:1.25rem 1.5rem;flex:1;background:var(--off)}
-.res-card{background:white;border-radius:18px;border:1px solid #ede9df;padding:1.25rem;margin-bottom:1rem}
-.res-card-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:.6px;margin-bottom:.75rem}
+/* ── RESULTADO ── */
+#resultado{align-items:stretch;justify-content:flex-start;background:#fff}
+.res-header{padding:2.25rem 1.5rem 1.75rem;text-align:center;position:relative;overflow:hidden;border-bottom:1.5px solid var(--border)}
+.res-emoji{font-size:56px;display:block;margin-bottom:.75rem;animation:boing .7s ease infinite alternate}
+@keyframes boing{from{transform:translateY(0) scale(1)}to{transform:translateY(-8px) scale(1.06)}}
+.res-badge{display:inline-block;font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:.85rem;letter-spacing:.5px;text-transform:uppercase}
+.res-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:var(--dark);line-height:1.15;margin-bottom:.6rem;letter-spacing:-.5px}
+.res-title em{font-style:italic}
+.res-sub{font-size:14px;color:var(--mid);line-height:1.7;max-width:300px;margin:0 auto;font-weight:400}
+
+.res-body{padding:1.25rem 1.5rem;flex:1;background:#fafafa}
+.res-card{background:#fff;border-radius:18px;border:1.5px solid var(--border);padding:1.25rem;margin-bottom:1rem}
+.res-card-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:1px;margin-bottom:.85rem}
 .trait-row{display:flex;align-items:center;gap:10px;margin-bottom:.6rem}
 .trait-row:last-child{margin-bottom:0}
-.trait-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.trait-text{font-size:14px;color:var(--dark);line-height:1.5}
-.scores-wrap{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
-.score-item{background:white;border-radius:14px;border:1px solid #ede9df;padding:.85rem .9rem}
-.score-label{font-size:11px;color:var(--mid);margin-bottom:4px}
-.score-bar-wrap{height:6px;background:#f0ede4;border-radius:10px;overflow:hidden;margin-bottom:4px}
-.score-bar{height:100%;border-radius:10px;transition:width 1s ease}
-.score-pct{font-family:'Syne',sans-serif;font-size:13px;font-weight:800}
+.trait-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.trait-text{font-size:14px;color:var(--dark);line-height:1.5;font-weight:400}
 
-.ig-box{background:var(--teal);border-radius:18px;padding:1.25rem;margin-bottom:1rem}
-.ig-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:white;margin-bottom:.85rem}
-.ig-step{display:flex;align-items:flex-start;gap:10px;margin-bottom:.7rem}
+.scores-wrap{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.score-item{background:#fff;border-radius:14px;border:1.5px solid var(--border);padding:.85rem .9rem}
+.score-label{font-size:11px;font-weight:600;color:var(--mid);margin-bottom:5px}
+.score-bar-wrap{height:4px;background:#f0f0ef;border-radius:10px;overflow:hidden;margin-bottom:5px}
+.score-bar{height:100%;border-radius:10px;transition:width 1s ease}
+.score-pct{font-family:'Playfair Display',serif;font-size:14px;font-weight:700}
+
+.ig-box{background:var(--dark);border-radius:18px;padding:1.35rem;margin-bottom:1rem}
+.ig-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:white;margin-bottom:1rem;letter-spacing:-.3px}
+.ig-step{display:flex;align-items:flex-start;gap:10px;margin-bottom:.75rem}
 .ig-step:last-child{margin-bottom:0}
-.ig-num{width:26px;height:26px;min-width:26px;background:var(--coral);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:11px;font-weight:800}
-.ig-txt{font-size:13px;color:#ffffffcc;line-height:1.6;padding-top:3px}
-.ig-txt b{color:white}
-.btn-ig{display:block;background:var(--coral);color:white;text-decoration:none;border-radius:30px;padding:1rem 2rem;font-family:'Syne',sans-serif;font-size:15px;font-weight:800;letter-spacing:.3px;text-align:center;margin-bottom:.75rem;transition:transform .15s}
-.btn-ig:hover{transform:scale(1.02)}
-.restart{display:block;text-align:center;font-size:12px;color:var(--mid);cursor:pointer;background:none;border:none;font-family:'DM Sans',sans-serif;text-decoration:underline;margin:0 auto}
+.ig-num{width:26px;height:26px;min-width:26px;background:var(--coral);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:800}
+.ig-txt{font-size:13px;color:#ffffff99;line-height:1.6;padding-top:3px}
+.ig-txt b{color:white;font-weight:700}
+
+.btn-ig{display:block;background:var(--teal-m);color:white;text-decoration:none;border-radius:14px;padding:1rem 2rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;letter-spacing:.2px;text-align:center;margin-bottom:.85rem;transition:transform .15s,box-shadow .2s;box-shadow:0 4px 16px rgba(29,158,117,.25)}
+.btn-ig:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(29,158,117,.35)}
+
+.restart{display:block;text-align:center;font-size:12px;font-weight:600;color:var(--mid);cursor:pointer;background:none;border:none;font-family:'Plus Jakarta Sans',sans-serif;text-decoration:underline;margin:0 auto;text-underline-offset:3px}
 </style>
 </head>
 <body>
 
 <!-- ── INTRO ── -->
 <div class="screen on" id="s0">
-  <div class="logo">ValClabs · @val.escobar</div>
+  <div class="logo">ValClabs <span>· @valclabs</span></div>
   <div class="intro-badge">🧠 Diagnóstico de mente de datos</div>
   <div class="intro-title">¿Qué tipo de<br>mente tienes<br>para los <em>datos?</em></div>
   <p class="intro-sub">4 situaciones reales. Elige instintivamente. Al final descubres <b>qué perfil eres</b> — sin saber nada de datos.</p>
@@ -141,10 +158,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--dark);mi
 
 <!-- ── Q1 ── -->
 <div class="screen q-screen" id="q1">
-  <div class="prog-wrap"><div class="prog-top"><span>Pregunta 1 de 4</span><b id="p1pct">25%</b></div><div class="prog-bar"><div class="prog-fill" style="width:25%"></div></div></div>
+  <div class="prog-wrap"><div class="prog-top"><span>Pregunta 1 de 4</span><b>25%</b></div><div class="prog-bar"><div class="prog-fill" style="width:25%"></div></div></div>
   <div class="q-top">
     <div class="q-num">Situación 1</div>
-    <div class="q-text">Tu amiga abre una<br>tienda online. Le va<br>bien unos días y<br>mal otros. <em>¿Qué haces?</em></div>
+    <div class="q-text">Tu amiga abre una tienda online. Le va bien unos días y mal otros. <em>¿Qué haces?</em></div>
   </div>
   <div class="q-body">
     <div class="opts-label">Elige lo que harías tú 👇</div>
@@ -162,7 +179,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--dark);mi
   <div class="prog-wrap"><div class="prog-top"><span>Pregunta 2 de 4</span><b>50%</b></div><div class="prog-bar"><div class="prog-fill" style="width:50%"></div></div></div>
   <div class="q-top">
     <div class="q-num">Situación 2</div>
-    <div class="q-text">Un negocio invirtió<br>en publicidad pero<br>no sabe si valió<br>la pena. <em>¿Qué miras primero?</em></div>
+    <div class="q-text">Un negocio invirtió en publicidad pero no sabe si valió la pena. <em>¿Qué miras primero?</em></div>
   </div>
   <div class="q-body">
     <div class="opts-label">Elige lo que harías tú 👇</div>
@@ -180,7 +197,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--dark);mi
   <div class="prog-wrap"><div class="prog-top"><span>Pregunta 3 de 4</span><b>75%</b></div><div class="prog-bar"><div class="prog-fill" style="width:75%"></div></div></div>
   <div class="q-top">
     <div class="q-num">Situación 3</div>
-    <div class="q-text">Estás en una reunión<br>y te muestran<br>una tabla llena<br>de números. <em>¿Qué pasa por tu mente?</em></div>
+    <div class="q-text">Estás en una reunión y te muestran una tabla llena de números. <em>¿Qué pasa por tu mente?</em></div>
   </div>
   <div class="q-body">
     <div class="mini-vis">
@@ -204,7 +221,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--dark);mi
   <div class="prog-wrap"><div class="prog-top"><span>Pregunta 4 de 4</span><b>100%</b></div><div class="prog-bar"><div class="prog-fill" style="width:100%"></div></div></div>
   <div class="q-top">
     <div class="q-num">Situación 4 · La final</div>
-    <div class="q-text">Un negocio te pide<br>ayuda. ¿Por dónde<br><em>empezarías?</em></div>
+    <div class="q-text">Un negocio te pide ayuda. ¿Por dónde <em>empezarías?</em></div>
   </div>
   <div class="q-body">
     <div class="context ctx-teal"><div class="ctx-inner">Tienen datos de ventas, redes sociales, visitas al sitio web y reportes del mes pasado. No saben qué está funcionando.</div></div>
@@ -236,9 +253,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--dark);mi
       <div class="ig-title">¡Comparte tu resultado! 🚀</div>
       <div class="ig-step"><div class="ig-num">1</div><div class="ig-txt">Toma captura de pantalla de esta pantalla 📸</div></div>
       <div class="ig-step"><div class="ig-num">2</div><div class="ig-txt">Súbela a tu historia de Instagram</div></div>
-      <div class="ig-step"><div class="ig-num">3</div><div class="ig-txt">Etiqueta a <b>@val.escobar</b> — te cuento el siguiente paso de tu ruta 🎯</div></div>
+      <div class="ig-step"><div class="ig-num">3</div><div class="ig-txt">Etiqueta a <b>@valclabs</b> — te cuento el siguiente paso de tu ruta 🎯</div></div>
     </div>
-    <a class="btn-ig" href="https://www.instagram.com/val.escobar" target="_blank">Ir a etiquetar @val.escobar →</a>
+    <a class="btn-ig" href="https://www.instagram.com/valclabs" target="_blank">Ir a etiquetar @valclabs →</a>
     <button class="restart" onclick="restart()">Repetir el diagnóstico</button>
   </div>
 </div>
@@ -251,9 +268,11 @@ const perfiles = {
     emoji: '📊',
     nombre: 'Mente Analista',
     badge: '📊 Analista de Datos',
-    color: '#085041',
-    badgeColor: '#1D9E75',
-    titulo: 'Eres del tipo<br><em style="color:#EF9F27">Analista de Datos</em>',
+    headerBg: '#F0FAF6',
+    badgeBg: '#D4F0E5',
+    badgeColor: '#085041',
+    titleColor: '#085041',
+    titulo: 'Eres del tipo <em style="color:#1D9E75">Analista de Datos</em>',
     sub: 'Ves patrones donde otros ven números sueltos. Tu instinto es preguntar "¿por qué?" — y eso vale muchísimo.',
     rasgos: [
       { color: '#1D9E75', text: 'Buscas la causa detrás de cada número' },
@@ -265,9 +284,11 @@ const perfiles = {
     emoji: '📱',
     nombre: 'Mente Digital',
     badge: '📱 Métricas Digitales',
-    color: '#1a1a2e',
-    badgeColor: '#534AB7',
-    titulo: 'Eres del tipo<br><em style="color:#EF9F27">Métricas Digitales</em>',
+    headerBg: '#EEEDFE',
+    badgeBg: '#D8D6FA',
+    badgeColor: '#3730A3',
+    titleColor: '#3730A3',
+    titulo: 'Eres del tipo <em style="color:#534AB7">Métricas Digitales</em>',
     sub: 'Entiendes que detrás de cada like hay una persona real. Tu ojo para el contenido y los números digitales es tu superpoder.',
     rasgos: [
       { color: '#534AB7', text: 'Conectas el contenido con los resultados reales' },
@@ -279,23 +300,27 @@ const perfiles = {
     emoji: '🛒',
     nombre: 'Mente E-commerce',
     badge: '🛒 E-commerce Analytics',
-    color: '#1D9E75',
-    badgeColor: '#085041',
-    titulo: 'Eres del tipo<br><em style="color:#EF9F27">E-commerce Analytics</em>',
+    headerBg: '#FFF5F2',
+    badgeBg: '#FFE0D6',
+    badgeColor: '#993C1D',
+    titleColor: '#993C1D',
+    titulo: 'Eres del tipo <em style="color:#D85A30">E-commerce Analytics</em>',
     sub: 'Tu mente va directo al punto: ¿cuántos compraron? Sabes que los datos importan cuando hay dinero de por medio.',
     rasgos: [
-      { color: '#085041', text: 'Piensas en conversiones, no solo en visitas' },
-      { color: '#085041', text: 'Encuentras dónde se pierden los clientes' },
-      { color: '#085041', text: 'Unes datos con decisiones de negocio reales' },
+      { color: '#D85A30', text: 'Piensas en conversiones, no solo en visitas' },
+      { color: '#D85A30', text: 'Encuentras dónde se pierden los clientes' },
+      { color: '#D85A30', text: 'Unes datos con decisiones de negocio reales' },
     ]
   },
   D: {
     emoji: '📋',
     nombre: 'Mente Comunicadora',
     badge: '📋 Reportes para Equipos',
-    color: '#2d1b69',
-    badgeColor: '#EF9F27',
-    titulo: 'Eres del tipo<br><em style="color:#EF9F27">Reportes para Equipos</em>',
+    headerBg: '#FAEEDA',
+    badgeBg: '#FAE0B0',
+    badgeColor: '#7A4D00',
+    titleColor: '#7A4D00',
+    titulo: 'Eres del tipo <em style="color:#EF9F27">Reportes para Equipos</em>',
     sub: 'Tu talento no es solo entender los datos — es hacer que otros los entiendan. Eso es raro y muy valioso en cualquier empresa.',
     rasgos: [
       { color: '#EF9F27', text: 'Conviertes lo complicado en algo simple' },
@@ -324,12 +349,20 @@ function showResult() {
   const winner = Object.entries(count).sort((a, b) => b[1] - a[1])[0][0];
   const p = perfiles[winner];
 
-  document.getElementById('res-header').style.background = p.color;
+  const header = document.getElementById('res-header');
+  header.style.background = p.headerBg;
+
   document.getElementById('res-emoji').textContent = p.emoji;
-  document.getElementById('res-badge').textContent = p.badge;
-  document.getElementById('res-badge').style.background = p.badgeColor + '33';
-  document.getElementById('res-badge').style.color = '#ffffffcc';
-  document.getElementById('res-title').innerHTML = p.titulo;
+
+  const badge = document.getElementById('res-badge');
+  badge.textContent = p.badge;
+  badge.style.background = p.badgeBg;
+  badge.style.color = p.badgeColor;
+
+  const title = document.getElementById('res-title');
+  title.innerHTML = p.titulo;
+  title.style.color = p.titleColor;
+
   document.getElementById('res-sub').textContent = p.sub;
 
   const traitsEl = document.getElementById('traits');
@@ -339,7 +372,7 @@ function showResult() {
 
   const total = 4;
   const labels = { A: '📊 Analista', B: '📱 Métricas', C: '🛒 E-commerce', D: '📋 Reportes' };
-  const colors = { A: '#1D9E75', B: '#534AB7', C: '#085041', D: '#EF9F27' };
+  const colors = { A: '#1D9E75', B: '#534AB7', C: '#D85A30', D: '#EF9F27' };
   document.getElementById('scores').innerHTML = Object.entries(count).map(([k, v]) =>
     `<div class="score-item">
       <div class="score-label">${labels[k]}</div>
