@@ -4,138 +4,179 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>¿Qué tipo de mente de datos tienes? · ValClabs</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Cabinet+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root{
-  --coral:#D85A30;--coral-d:#b84a22;
+  --coral:#D85A30;--coral-d:#b84a22;--coral-l:#FFF1EC;
   --teal:#085041;--teal-m:#1D9E75;--teal-l:#E1F5EE;
   --purple:#534AB7;--purple-l:#EEEDFE;
-  --amber:#FAEEDA;--amber-m:#EF9F27;
+  --amber:#FAEEDA;--amber-m:#EF9F27;--amber-d:#7A4D00;
   --dark:#1A1A18;--mid:#888780;--off:#FFFFFF;
-  --border:#EBEBEB;
+  --border:#EBEBEB;--bg:#FAFAF8;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:var(--dark);min-height:100vh;overflow-x:hidden}
-.screen{display:none;min-height:100vh;flex-direction:column;animation:fadein .4s ease}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:var(--dark);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.screen{display:none;min-height:100vh;flex-direction:column;animation:fadein .45s cubic-bezier(.22,1,.36,1)}
 .screen.on{display:flex}
-@keyframes fadein{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadein{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── INTRO ── */
-#s0{background:#fff;align-items:center;justify-content:center;padding:3rem 1.75rem;text-align:center;position:relative;overflow:hidden}
-#s0::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 0%, #E1F5EE 0%, transparent 70%);pointer-events:none}
-#s0::after{content:'🧠';position:absolute;font-size:200px;opacity:.04;bottom:-40px;right:-20px;pointer-events:none}
-
-.logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;color:var(--teal-m);letter-spacing:2px;text-transform:uppercase;margin-bottom:2.5rem;display:flex;align-items:center;justify-content:center;gap:6px}
-.logo span{color:var(--mid);font-weight:400}
-
-.intro-badge{background:var(--teal-l);color:var(--teal);font-size:12px;font-weight:600;padding:6px 16px;border-radius:30px;margin-bottom:1.5rem;display:inline-block;letter-spacing:.3px}
-
-.intro-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:800;color:var(--dark);line-height:1.1;margin-bottom:1rem;letter-spacing:-1px}
+/* ─── INTRO ─── */
+#s0{background:#fff;align-items:center;justify-content:center;padding:3rem 1.75rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+#s0::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -5%,#E1F5EE 0%,transparent 70%);pointer-events:none}
+.logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:800;color:var(--teal-m);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:2.5rem;display:flex;align-items:center;justify-content:center;gap:6px}
+.logo span{color:var(--mid);font-weight:500;letter-spacing:1px}
+.intro-badge{background:var(--teal-l);color:var(--teal);font-size:12px;font-weight:700;padding:6px 18px;border-radius:30px;margin-bottom:1.5rem;display:inline-block;letter-spacing:.4px}
+.intro-title{font-family:'Playfair Display',serif;font-size:40px;font-weight:800;color:var(--dark);line-height:1.08;margin-bottom:1.1rem;letter-spacing:-1.2px}
 .intro-title em{color:var(--teal-m);font-style:italic}
-
-.intro-sub{font-size:15px;color:var(--mid);line-height:1.7;margin-bottom:.5rem;max-width:300px}
-.intro-sub b{color:var(--dark)}
-
-.intro-pills{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:1.25rem 0 2rem}
-.pill{background:#fff;border:1.5px solid var(--border);color:var(--dark);font-size:12px;font-weight:500;padding:5px 13px;border-radius:20px}
-
-.btn-start{background:var(--dark);color:white;border:none;border-radius:14px;padding:1rem 2.5rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,0,0,.15);letter-spacing:.2px}
-.btn-start:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.2)}
+.intro-sub{font-size:15px;color:var(--mid);line-height:1.72;max-width:300px;font-weight:400}
+.intro-sub b{color:var(--dark);font-weight:700}
+.intro-pills{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:1.35rem 0 2rem}
+.pill{background:#fff;border:1.5px solid var(--border);color:var(--dark);font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px}
+.btn-start{background:var(--dark);color:white;border:none;border-radius:14px;padding:1.1rem 2.8rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;cursor:pointer;transition:transform .15s,box-shadow .2s;box-shadow:0 6px 24px rgba(0,0,0,.18);letter-spacing:.3px}
+.btn-start:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,.24)}
 .btn-start:active{transform:scale(.97)}
+.time-pill{display:inline-flex;align-items:center;gap:6px;background:#f5f5f3;border-radius:20px;padding:6px 15px;font-size:12px;color:var(--mid);margin-top:1.1rem;font-weight:500}
 
-.time-pill{display:inline-flex;align-items:center;gap:6px;background:#f5f5f3;border-radius:20px;padding:6px 14px;font-size:12px;color:var(--mid);margin-top:1rem;font-weight:500}
-
-/* ── PROGRESO ── */
-.prog-wrap{background:#fff;padding:.85rem 1.5rem;border-bottom:1.5px solid var(--border);position:sticky;top:0;z-index:10}
-.prog-top{display:flex;justify-content:space-between;font-size:11px;font-weight:600;color:var(--mid);margin-bottom:7px;letter-spacing:.3px;text-transform:uppercase}
+/* ─── PROGRESO ─── */
+.prog-wrap{background:#fff;padding:.9rem 1.5rem;border-bottom:1.5px solid var(--border);position:sticky;top:0;z-index:10}
+.prog-top{display:flex;justify-content:space-between;font-size:11px;font-weight:700;color:var(--mid);margin-bottom:8px;letter-spacing:.4px;text-transform:uppercase}
 .prog-top b{color:var(--teal-m)}
 .prog-bar{height:3px;background:#f0f0ef;border-radius:10px;overflow:hidden}
-.prog-fill{height:100%;background:linear-gradient(90deg,var(--teal-m),var(--teal));border-radius:10px;transition:width .5s ease}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--teal-m),var(--teal));border-radius:10px;transition:width .55s cubic-bezier(.22,1,.36,1)}
 
-/* ── PREGUNTA ── */
+/* ─── PREGUNTA ─── */
 .q-screen{background:#fff}
-.q-top{padding:1.75rem 1.5rem 1.25rem;background:#fff;border-bottom:1.5px solid var(--border)}
-.q-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;color:var(--teal-m);letter-spacing:2px;text-transform:uppercase;margin-bottom:.6rem}
-.q-text{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--dark);line-height:1.25;letter-spacing:-.4px}
+.q-top{padding:1.75rem 1.5rem 1.3rem;background:#fff;border-bottom:1.5px solid var(--border)}
+.q-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:800;color:var(--teal-m);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.6rem}
+.q-text{font-family:'Playfair Display',serif;font-size:23px;font-weight:700;color:var(--dark);line-height:1.28;letter-spacing:-.4px}
 .q-text em{color:var(--teal-m);font-style:italic}
-.q-body{padding:1.25rem 1.5rem;flex:1;background:#fafafa}
+.q-body{padding:1.3rem 1.5rem;flex:1;background:var(--bg)}
 
-.context{background:#fff;border-radius:16px;border:1.5px solid var(--border);padding:1rem 1.1rem;margin-bottom:1.1rem;position:relative;overflow:hidden;font-size:14px;color:var(--dark);line-height:1.65}
+.psy-note{background:#fff;border-radius:14px;border:1.5px solid var(--border);padding:.85rem 1rem;margin-bottom:1.1rem;display:flex;align-items:flex-start;gap:9px}
+.psy-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.psy-txt{font-size:12.5px;color:var(--mid);line-height:1.6;font-style:italic}
+
+.context{background:#fff;border-radius:16px;border:1.5px solid var(--border);padding:1rem 1.1rem 1rem 1.4rem;margin-bottom:1.1rem;position:relative;overflow:hidden;font-size:14px;color:var(--dark);line-height:1.65}
 .context::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;border-radius:3px 0 0 3px}
 .ctx-teal::before{background:var(--teal-m)}
 .ctx-coral::before{background:var(--coral)}
 .ctx-purple::before{background:var(--purple)}
 .ctx-amber::before{background:var(--amber-m)}
-.context b{font-weight:600}
-.context .ctx-inner{padding-left:.6rem}
+.context b{font-weight:700}
 
-/* VISUAL mini */
-.mini-vis{background:#fff;border-radius:14px;border:1.5px solid var(--border);padding:1rem;margin-bottom:1rem}
-.mrow{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+/* mini-vis */
+.mini-vis{background:#fff;border-radius:14px;border:1.5px solid var(--border);padding:1rem 1.1rem;margin-bottom:1rem}
+.mrow{display:flex;align-items:center;gap:8px;margin-bottom:7px}
 .mrow:last-child{margin-bottom:0}
-.mlabel{font-size:12px;font-weight:600;color:var(--mid);min-width:40px}
-.micons{display:flex;gap:2px;flex-wrap:wrap}
-.micon{font-size:14px;line-height:1}
-.mval{font-size:11px;font-weight:700;color:var(--dark);margin-left:4px}
+.mlabel{font-size:12px;font-weight:700;color:var(--mid);min-width:38px}
+.micons{display:flex;gap:2px;flex-wrap:wrap;align-items:center}
+.micon{font-size:13px;line-height:1}
+.mval{font-size:11px;font-weight:800;color:var(--dark);margin-left:4px}
 
-/* ── OPCIONES ── */
-.opts-label{font-size:11px;font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:1px;margin-bottom:.85rem}
+/* opciones */
+.opts-label{font-size:11px;font-weight:800;color:var(--mid);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:.9rem}
 .opts{display:grid;gap:9px}
-.opt{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:.9rem 1.1rem;cursor:pointer;text-align:left;font-family:'Plus Jakarta Sans',sans-serif;transition:all .18s;display:flex;align-items:flex-start;gap:10px}
-.opt:hover{transform:translateX(4px);border-color:#ccc}
+.opt{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:.9rem 1.1rem;cursor:pointer;text-align:left;font-family:'Plus Jakarta Sans',sans-serif;transition:all .18s cubic-bezier(.22,1,.36,1);display:flex;align-items:flex-start;gap:10px}
+.opt:hover{transform:translateX(5px)}
 .opt:hover.o-teal{border-color:var(--teal-m);background:var(--teal-l)}
-.opt:hover.o-coral{border-color:var(--coral);background:#fff5f2}
+.opt:hover.o-coral{border-color:var(--coral);background:var(--coral-l)}
 .opt:hover.o-purple{border-color:var(--purple);background:var(--purple-l)}
 .opt:hover.o-amber{border-color:var(--amber-m);background:var(--amber)}
-.opt .oi{font-size:20px;flex-shrink:0;margin-top:1px}
-.opt .ot b{display:block;font-size:14px;font-weight:700;color:var(--dark);margin-bottom:2px}
+.opt .oi{font-size:20px;flex-shrink:0;margin-top:2px}
+.opt .ot b{display:block;font-size:14px;font-weight:700;color:var(--dark);margin-bottom:2px;line-height:1.35}
 .opt .ot span{font-size:12px;color:var(--mid);font-weight:400}
 .opt.chosen.o-teal{border-color:var(--teal-m);background:var(--teal-l);pointer-events:none}
-.opt.chosen.o-coral{border-color:var(--coral);background:#fff5f2;pointer-events:none}
+.opt.chosen.o-coral{border-color:var(--coral);background:var(--coral-l);pointer-events:none}
 .opt.chosen.o-purple{border-color:var(--purple);background:var(--purple-l);pointer-events:none}
 .opt.chosen.o-amber{border-color:var(--amber-m);background:var(--amber);pointer-events:none}
-.opt.unchosen{opacity:.3;pointer-events:none}
+.opt.unchosen{opacity:.25;pointer-events:none}
 
-/* ── RESULTADO ── */
-#resultado{align-items:stretch;justify-content:flex-start;background:#fff}
-.res-header{padding:2.25rem 1.5rem 1.75rem;text-align:center;position:relative;overflow:hidden;border-bottom:1.5px solid var(--border)}
-.res-emoji{font-size:56px;display:block;margin-bottom:.75rem;animation:boing .7s ease infinite alternate}
-@keyframes boing{from{transform:translateY(0) scale(1)}to{transform:translateY(-8px) scale(1.06)}}
-.res-badge{display:inline-block;font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:.85rem;letter-spacing:.5px;text-transform:uppercase}
-.res-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:var(--dark);line-height:1.15;margin-bottom:.6rem;letter-spacing:-.5px}
+/* ─── LOADING ─── */
+#loading{background:#fff;align-items:center;justify-content:center;padding:3rem 2rem;text-align:center}
+.load-brain{font-size:64px;animation:pulse 1.2s ease infinite alternate;display:block;margin-bottom:1.5rem}
+@keyframes pulse{from{transform:scale(1)}to{transform:scale(1.12)}}
+.load-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:800;color:var(--dark);margin-bottom:.6rem;letter-spacing:-.4px}
+.load-sub{font-size:14px;color:var(--mid);line-height:1.65;max-width:260px;margin:0 auto .5rem}
+.load-bar-wrap{width:200px;height:4px;background:#f0f0ef;border-radius:10px;overflow:hidden;margin:1.5rem auto 0}
+.load-bar{height:100%;width:0;background:linear-gradient(90deg,var(--teal-m),var(--teal));border-radius:10px;animation:loadbar 2.2s ease forwards}
+@keyframes loadbar{0%{width:0}100%{width:100%}}
+.load-dots{display:flex;gap:6px;justify-content:center;margin-top:1rem}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--border);animation:dotblink 1.2s ease infinite}
+.dot:nth-child(2){animation-delay:.2s;background:var(--teal-l)}
+.dot:nth-child(3){animation-delay:.4s;background:var(--teal-m)}
+@keyframes dotblink{0%,100%{opacity:.3}50%{opacity:1;transform:scale(1.3)}}
+
+/* ─── RESULTADO ─── */
+#resultado{background:#fff}
+.res-header{padding:2.5rem 1.5rem 2rem;text-align:center;position:relative;overflow:hidden}
+.res-header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 60% at 50% 100%,rgba(255,255,255,.8) 0%,transparent 60%);pointer-events:none}
+.res-emoji{font-size:64px;display:block;margin-bottom:.8rem;position:relative;z-index:1;animation:boing .8s ease infinite alternate}
+@keyframes boing{from{transform:translateY(0) scale(1)}to{transform:translateY(-9px) scale(1.07)}}
+.res-badge{display:inline-block;font-size:11px;font-weight:800;padding:5px 16px;border-radius:20px;margin-bottom:.9rem;letter-spacing:.6px;text-transform:uppercase;position:relative;z-index:1}
+.res-title{font-family:'Playfair Display',serif;font-size:30px;font-weight:800;line-height:1.12;margin-bottom:.65rem;letter-spacing:-.6px;position:relative;z-index:1}
 .res-title em{font-style:italic}
-.res-sub{font-size:14px;color:var(--mid);line-height:1.7;max-width:300px;margin:0 auto;font-weight:400}
+.res-wow{font-size:14px;line-height:1.72;max-width:310px;margin:0 auto;font-weight:400;position:relative;z-index:1}
 
-.res-body{padding:1.25rem 1.5rem;flex:1;background:#fafafa}
-.res-card{background:#fff;border-radius:18px;border:1.5px solid var(--border);padding:1.25rem;margin-bottom:1rem}
-.res-card-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:1px;margin-bottom:.85rem}
-.trait-row{display:flex;align-items:center;gap:10px;margin-bottom:.6rem}
-.trait-row:last-child{margin-bottom:0}
-.trait-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-.trait-text{font-size:14px;color:var(--dark);line-height:1.5;font-weight:400}
+.res-body{padding:1.35rem 1.5rem 2.5rem;background:var(--bg)}
 
-.scores-wrap{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+/* diagnóstico psicológico */
+.diag-card{background:#fff;border-radius:20px;border:1.5px solid var(--border);padding:1.4rem;margin-bottom:1rem;position:relative;overflow:hidden}
+.diag-accent{position:absolute;top:0;left:0;width:100%;height:4px;border-radius:20px 20px 0 0}
+.diag-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:1rem}
+.diag-headline{font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--dark);line-height:1.2;margin-bottom:.6rem;letter-spacing:-.3px}
+.diag-body{font-size:13.5px;color:#555;line-height:1.72;margin-bottom:1rem}
+.trait-list{display:grid;gap:7px}
+.trait-row{display:flex;align-items:flex-start;gap:9px}
+.trait-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.trait-text{font-size:13.5px;color:var(--dark);line-height:1.5;font-weight:400}
+.trait-text b{font-weight:700}
+
+/* cargos */
+.cargo-card{background:#fff;border-radius:20px;border:1.5px solid var(--border);padding:1.4rem;margin-bottom:1rem}
+.cargo-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--mid);margin-bottom:.9rem}
+.cargo-grid{display:grid;gap:8px}
+.cargo-item{border-radius:12px;padding:.8rem 1rem;display:flex;align-items:center;gap:10px}
+.cargo-icon{font-size:20px;flex-shrink:0}
+.cargo-name{font-size:13.5px;font-weight:700;color:var(--dark);margin-bottom:1px}
+.cargo-desc{font-size:12px;color:var(--mid);line-height:1.45}
+
+/* secundario */
+.sec-card{background:#fff;border-radius:20px;border:1.5px solid var(--border);padding:1.4rem;margin-bottom:1rem}
+.sec-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--mid);margin-bottom:.85rem}
+.sec-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:.75rem}
+.sec-row:last-child{margin-bottom:0}
+.sec-pct{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;flex-shrink:0;min-width:36px}
+.sec-info{flex:1}
+.sec-name{font-size:13px;font-weight:700;color:var(--dark);margin-bottom:2px}
+.sec-meaning{font-size:12px;color:var(--mid);line-height:1.5}
+.sec-bar-wrap{height:3px;background:#f0f0ef;border-radius:10px;overflow:hidden;margin-top:5px}
+.sec-bar{height:100%;border-radius:10px}
+
+/* scores */
+.scores-section{margin-bottom:1rem}
+.scores-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--mid);margin-bottom:.85rem}
+.scores-wrap{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .score-item{background:#fff;border-radius:14px;border:1.5px solid var(--border);padding:.85rem .9rem}
-.score-label{font-size:11px;font-weight:600;color:var(--mid);margin-bottom:5px}
+.score-lbl{font-size:11px;font-weight:600;color:var(--mid);margin-bottom:5px}
 .score-bar-wrap{height:4px;background:#f0f0ef;border-radius:10px;overflow:hidden;margin-bottom:5px}
-.score-bar{height:100%;border-radius:10px;transition:width 1s ease}
+.score-bar{height:100%;border-radius:10px;transition:width 1.2s cubic-bezier(.22,1,.36,1)}
 .score-pct{font-family:'Playfair Display',serif;font-size:14px;font-weight:700}
 
-.ig-box{background:var(--dark);border-radius:18px;padding:1.35rem;margin-bottom:1rem}
-.ig-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:white;margin-bottom:1rem;letter-spacing:-.3px}
-.ig-step{display:flex;align-items:flex-start;gap:10px;margin-bottom:.75rem}
-.ig-step:last-child{margin-bottom:0}
-.ig-num{width:26px;height:26px;min-width:26px;background:var(--coral);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:800}
-.ig-txt{font-size:13px;color:#ffffff99;line-height:1.6;padding-top:3px}
-.ig-txt b{color:white;font-weight:700}
+/* CTA compartir */
+.share-card{background:var(--dark);border-radius:20px;padding:1.5rem;margin-bottom:.85rem}
+.share-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:800;color:white;margin-bottom:.3rem;letter-spacing:-.3px}
+.share-sub{font-size:13px;color:#ffffff77;margin-bottom:1.25rem;line-height:1.55}
+.share-steps{display:grid;gap:.7rem;margin-bottom:1.4rem}
+.share-step{display:flex;align-items:flex-start;gap:10px}
+.step-num{width:24px;height:24px;min-width:24px;background:var(--coral);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif}
+.step-txt{font-size:13px;color:#ffffffaa;line-height:1.55;padding-top:2px}
+.step-txt b{color:white;font-weight:700}
+.btn-historia{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#E1306C,#C13584,#833AB4);color:white;text-decoration:none;border-radius:14px;padding:1rem 1.5rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;letter-spacing:.2px;text-align:center;transition:transform .15s,box-shadow .2s;box-shadow:0 6px 20px rgba(200,60,150,.35)}
+.btn-historia:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(200,60,150,.45)}
+.btn-historia svg{width:20px;height:20px;fill:white;flex-shrink:0}
 
-.btn-ig{display:block;background:var(--teal-m);color:white;text-decoration:none;border-radius:14px;padding:1rem 2rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;letter-spacing:.2px;text-align:center;margin-bottom:.85rem;transition:transform .15s,box-shadow .2s;box-shadow:0 4px 16px rgba(29,158,117,.25)}
-.btn-ig:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(29,158,117,.35)}
-
-.restart{display:block;text-align:center;font-size:12px;font-weight:600;color:var(--mid);cursor:pointer;background:none;border:none;font-family:'Plus Jakarta Sans',sans-serif;text-decoration:underline;margin:0 auto;text-underline-offset:3px}
+.restart{display:block;text-align:center;font-size:12px;font-weight:600;color:var(--mid);cursor:pointer;background:none;border:none;font-family:'Plus Jakarta Sans',sans-serif;text-decoration:underline;margin:0 auto;text-underline-offset:3px;padding:.5rem}
 </style>
 </head>
 <body>
@@ -145,30 +186,31 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:var(--dark
   <div class="logo">ValClabs <span>· @valclabs</span></div>
   <div class="intro-badge">🧠 Diagnóstico de mente de datos</div>
   <div class="intro-title">¿Qué tipo de<br>mente tienes<br>para los <em>datos?</em></div>
-  <p class="intro-sub">4 situaciones reales. Elige instintivamente. Al final descubres <b>qué perfil eres</b> — sin saber nada de datos.</p>
+  <p class="intro-sub">6 situaciones reales del mundo laboral. Responde con tu primer instinto. Al final descubres <b>exactamente qué perfil eres</b> y para qué cargo estás hecho/a.</p>
   <div class="intro-pills">
     <span class="pill">📊 Analista</span>
-    <span class="pill">📱 Métricas</span>
+    <span class="pill">📱 Digital</span>
     <span class="pill">🛒 E-commerce</span>
-    <span class="pill">📋 Reportes</span>
+    <span class="pill">📋 Estratega</span>
   </div>
   <button class="btn-start" onclick="go('q1')">Descubrir mi perfil →</button>
-  <div class="time-pill">⏱ 2 minutos · 4 preguntas</div>
+  <div class="time-pill">⏱ 3 minutos · 6 preguntas</div>
 </div>
 
 <!-- ── Q1 ── -->
 <div class="screen q-screen" id="q1">
-  <div class="prog-wrap"><div class="prog-top"><span>Pregunta 1 de 4</span><b>25%</b></div><div class="prog-bar"><div class="prog-fill" style="width:25%"></div></div></div>
+  <div class="prog-wrap"><div class="prog-top"><span>Pregunta 1 de 6</span><b>17%</b></div><div class="prog-bar"><div class="prog-fill" style="width:17%"></div></div></div>
   <div class="q-top">
     <div class="q-num">Situación 1</div>
     <div class="q-text">Tu amiga abre una tienda online. Le va bien unos días y mal otros. <em>¿Qué haces?</em></div>
   </div>
   <div class="q-body">
+    <div class="psy-note"><span class="psy-icon">🔬</span><p class="psy-txt">Cómo reaccionas ante la incertidumbre revela mucho sobre tu mente analítica.</p></div>
     <div class="opts-label">Elige lo que harías tú 👇</div>
     <div class="opts">
-      <button class="opt o-teal" onclick="ans(1,'A')"><span class="oi">📊</span><div class="ot"><b>Pido los datos de ventas por día y busco el patrón</b><span>Quiero ver cuándo y por qué cambian</span></div></button>
-      <button class="opt o-coral" onclick="ans(1,'B')"><span class="oi">📱</span><div class="ot"><b>Reviso qué posts publicó esos días</b><span>Apuesto a que el contenido tiene que ver</span></div></button>
-      <button class="opt o-purple" onclick="ans(1,'C')"><span class="oi">🛒</span><div class="ot"><b>Miro si la gente llega al carrito pero no compra</b><span>Puede que el problema esté al final</span></div></button>
+      <button class="opt o-teal" onclick="ans(1,'A')"><span class="oi">📊</span><div class="ot"><b>Pido los datos de ventas por día y busco el patrón</b><span>Quiero ver cuándo y exactamente por qué cambian</span></div></button>
+      <button class="opt o-coral" onclick="ans(1,'B')"><span class="oi">📱</span><div class="ot"><b>Reviso qué publicó en redes esos días buenos y malos</b><span>Apuesto a que el contenido tiene que ver</span></div></button>
+      <button class="opt o-purple" onclick="ans(1,'C')"><span class="oi">🛒</span><div class="ot"><b>Miro si la gente llega al carrito pero no termina comprando</b><span>Puede que el problema esté justo al final</span></div></button>
       <button class="opt o-amber" onclick="ans(1,'D')"><span class="oi">📋</span><div class="ot"><b>Le hago un resumen claro de lo que está pasando</b><span>Para que ella misma pueda tomar la decisión</span></div></button>
     </div>
   </div>
@@ -176,62 +218,114 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:var(--dark
 
 <!-- ── Q2 ── -->
 <div class="screen q-screen" id="q2">
-  <div class="prog-wrap"><div class="prog-top"><span>Pregunta 2 de 4</span><b>50%</b></div><div class="prog-bar"><div class="prog-fill" style="width:50%"></div></div></div>
+  <div class="prog-wrap"><div class="prog-top"><span>Pregunta 2 de 6</span><b>33%</b></div><div class="prog-bar"><div class="prog-fill" style="width:33%"></div></div></div>
   <div class="q-top">
     <div class="q-num">Situación 2</div>
-    <div class="q-text">Un negocio invirtió en publicidad pero no sabe si valió la pena. <em>¿Qué miras primero?</em></div>
+    <div class="q-text">Un negocio invirtió en publicidad y no sabe si valió la pena. <em>¿Qué miras primero?</em></div>
   </div>
   <div class="q-body">
+    <div class="psy-note"><span class="psy-icon">💡</span><p class="psy-txt">Tu primer movimiento dice si piensas en causa, efecto, conversión o comunicación.</p></div>
     <div class="opts-label">Elige lo que harías tú 👇</div>
     <div class="opts">
-      <button class="opt o-teal" onclick="ans(2,'A')"><span class="oi">📊</span><div class="ot"><b>Comparo ventas antes y después de la pauta</b><span>Los números no mienten</span></div></button>
-      <button class="opt o-coral" onclick="ans(2,'B')"><span class="oi">📱</span><div class="ot"><b>Miro cuántos vieron el anuncio y cuántos hicieron algo</b><span>El engagement dice si el mensaje llegó</span></div></button>
-      <button class="opt o-purple" onclick="ans(2,'C')"><span class="oi">🛒</span><div class="ot"><b>Veo cuántos llegaron a la tienda vs cuántos compraron</b><span>Lo que importa es la conversión final</span></div></button>
-      <button class="opt o-amber" onclick="ans(2,'D')"><span class="oi">📋</span><div class="ot"><b>Preparo un informe simple: gastamos X, ganamos Y</b><span>Así el dueño decide sin complicaciones</span></div></button>
+      <button class="opt o-teal" onclick="ans(2,'A')"><span class="oi">📊</span><div class="ot"><b>Comparo ventas antes y después de la pauta</b><span>Los números no mienten si sabes leerlos</span></div></button>
+      <button class="opt o-coral" onclick="ans(2,'B')"><span class="oi">📱</span><div class="ot"><b>Miro cuántos vieron el anuncio y cuántos hicieron algo</b><span>El engagement dice si el mensaje llegó de verdad</span></div></button>
+      <button class="opt o-purple" onclick="ans(2,'C')"><span class="oi">🛒</span><div class="ot"><b>Veo cuántos llegaron a la tienda vs cuántos compraron</b><span>Lo que importa es la conversión final, siempre</span></div></button>
+      <button class="opt o-amber" onclick="ans(2,'D')"><span class="oi">📋</span><div class="ot"><b>Preparo un informe simple: invertimos X, ganamos Y</b><span>Así el dueño decide sin perderse en números</span></div></button>
     </div>
   </div>
 </div>
 
 <!-- ── Q3 ── -->
 <div class="screen q-screen" id="q3">
-  <div class="prog-wrap"><div class="prog-top"><span>Pregunta 3 de 4</span><b>75%</b></div><div class="prog-bar"><div class="prog-fill" style="width:75%"></div></div></div>
+  <div class="prog-wrap"><div class="prog-top"><span>Pregunta 3 de 6</span><b>50%</b></div><div class="prog-bar"><div class="prog-fill" style="width:50%"></div></div></div>
   <div class="q-top">
     <div class="q-num">Situación 3</div>
-    <div class="q-text">Estás en una reunión y te muestran una tabla llena de números. <em>¿Qué pasa por tu mente?</em></div>
+    <div class="q-text">Estás en una reunión y te muestran esta tabla de datos. <em>¿Qué pasa por tu mente?</em></div>
   </div>
   <div class="q-body">
     <div class="mini-vis">
       <div class="mrow"><div class="mlabel">Ene</div><div class="micons"><span class="micon">🟩</span><span class="micon">🟩</span><span class="micon">🟩</span><span class="mval">340</span></div></div>
       <div class="mrow"><div class="mlabel">Feb</div><div class="micons"><span class="micon">🟩</span><span class="micon">🟩</span><span class="micon">🟩</span><span class="micon">🟩</span><span class="micon">🟩</span><span class="mval">520</span></div></div>
-      <div class="mrow"><div class="mlabel">Mar</div><div class="micons"><span class="micon">🟩</span><span class="mval">90</span></div></div>
+      <div class="mrow"><div class="mlabel">Mar</div><div class="micons"><span class="micon">🟥</span><span class="mval">90</span></div></div>
       <div class="mrow"><div class="mlabel">Abr</div><div class="micons"><span class="micon">🟩</span><span class="micon">🟩</span><span class="micon">🟩</span><span class="micon">🟩</span><span class="mval">410</span></div></div>
     </div>
     <div class="opts-label">¿Qué notas? 👇</div>
     <div class="opts">
-      <button class="opt o-teal" onclick="ans(3,'A')"><span class="oi">🔍</span><div class="ot"><b>"Marzo está rarísimo. ¿Qué pasó ese mes?"</b><span>Inmediatamente quiero entender la caída</span></div></button>
-      <button class="opt o-coral" onclick="ans(3,'B')"><span class="oi">📈</span><div class="ot"><b>"Febrero fue el mejor. ¿Qué hicimos diferente?"</b><span>Si lo sé, puedo repetirlo</span></div></button>
-      <button class="opt o-purple" onclick="ans(3,'C')"><span class="oi">💡</span><div class="ot"><b>"¿Cuántos de esos terminaron comprando algo?"</b><span>Los números sin conversión no me dicen mucho</span></div></button>
-      <button class="opt o-amber" onclick="ans(3,'D')"><span class="oi">🗣️</span><div class="ot"><b>"Esto necesita un gráfico. Así nadie lo entiende."</b><span>La data vale si la gente la puede leer</span></div></button>
+      <button class="opt o-teal" onclick="ans(3,'A')"><span class="oi">🔍</span><div class="ot"><b>"Marzo está rarísimo — ¿qué pasó ese mes?"</b><span>Necesito entender la caída antes de seguir</span></div></button>
+      <button class="opt o-coral" onclick="ans(3,'B')"><span class="oi">📈</span><div class="ot"><b>"Febrero fue el mejor — ¿qué hicimos diferente?"</b><span>Si lo identifico, puedo repetirlo</span></div></button>
+      <button class="opt o-purple" onclick="ans(3,'C')"><span class="oi">💡</span><div class="ot"><b>"¿Cuántos de esos números terminaron en ventas?"</b><span>Sin conversión, los datos no me dicen mucho</span></div></button>
+      <button class="opt o-amber" onclick="ans(3,'D')"><span class="oi">🗣️</span><div class="ot"><b>"Esto necesita un gráfico — así nadie lo entiende"</b><span>La data vale solo si la gente puede leerla</span></div></button>
     </div>
   </div>
 </div>
 
 <!-- ── Q4 ── -->
 <div class="screen q-screen" id="q4">
-  <div class="prog-wrap"><div class="prog-top"><span>Pregunta 4 de 4</span><b>100%</b></div><div class="prog-bar"><div class="prog-fill" style="width:100%"></div></div></div>
+  <div class="prog-wrap"><div class="prog-top"><span>Pregunta 4 de 6</span><b>67%</b></div><div class="prog-bar"><div class="prog-fill" style="width:67%"></div></div></div>
   <div class="q-top">
-    <div class="q-num">Situación 4 · La final</div>
-    <div class="q-text">Un negocio te pide ayuda. ¿Por dónde <em>empezarías?</em></div>
+    <div class="q-num">Situación 4</div>
+    <div class="q-text">Te contratan para ayudar a un negocio. <em>¿Por dónde empiezas?</em></div>
   </div>
   <div class="q-body">
-    <div class="context ctx-teal"><div class="ctx-inner">Tienen datos de ventas, redes sociales, visitas al sitio web y reportes del mes pasado. No saben qué está funcionando.</div></div>
+    <div class="context ctx-teal">Tienen datos de ventas, redes sociales, visitas al sitio web y reportes del mes pasado. <b>No saben qué está funcionando.</b></div>
     <div class="opts-label">¿Tu primer paso? 👇</div>
     <div class="opts">
-      <button class="opt o-teal" onclick="ans(4,'A')"><span class="oi">📊</span><div class="ot"><b>Junto todos los datos y busco qué tienen en común los buenos meses</b><span>El patrón siempre está ahí</span></div></button>
-      <button class="opt o-coral" onclick="ans(4,'B')"><span class="oi">📱</span><div class="ot"><b>Miro las redes primero — el contenido es el motor</b><span>Si el mensaje no llega, nada más importa</span></div></button>
-      <button class="opt o-purple" onclick="ans(4,'C')"><span class="oi">🛒</span><div class="ot"><b>Veo cuánta gente llega vs cuánta termina comprando</b><span>Ahí está el hueco que hay que tapar</span></div></button>
-      <button class="opt o-amber" onclick="ans(4,'D')"><span class="oi">📋</span><div class="ot"><b>Les hago una presentación con lo más importante resumido</b><span>Primero hay que entender dónde están parados</span></div></button>
+      <button class="opt o-teal" onclick="ans(4,'A')"><span class="oi">📊</span><div class="ot"><b>Junto todo y busco qué tienen en común los meses buenos</b><span>El patrón siempre está escondido en los datos</span></div></button>
+      <button class="opt o-coral" onclick="ans(4,'B')"><span class="oi">📱</span><div class="ot"><b>Voy directo a las redes — el contenido es el motor</b><span>Si el mensaje no llega, nada más importa</span></div></button>
+      <button class="opt o-purple" onclick="ans(4,'C')"><span class="oi">🛒</span><div class="ot"><b>Mido cuánta gente llega vs cuánta termina comprando</b><span>Ahí está el hueco que hay que tapar primero</span></div></button>
+      <button class="opt o-amber" onclick="ans(4,'D')"><span class="oi">📋</span><div class="ot"><b>Hago un diagnóstico visual de dónde están parados</b><span>Primero hay que entender el punto de partida</span></div></button>
     </div>
+  </div>
+</div>
+
+<!-- ── Q5 (NUEVA) ── -->
+<div class="screen q-screen" id="q5">
+  <div class="prog-wrap"><div class="prog-top"><span>Pregunta 5 de 6</span><b>83%</b></div><div class="prog-bar"><div class="prog-fill" style="width:83%"></div></div></div>
+  <div class="q-top">
+    <div class="q-num">Situación 5 · La presión</div>
+    <div class="q-text">Tu jefe te pide resultados en 24 horas. Los datos son un caos. <em>¿Qué haces?</em></div>
+  </div>
+  <div class="q-body">
+    <div class="psy-note"><span class="psy-icon">⏱️</span><p class="psy-txt">Bajo presión, tu mente revela cómo realmente procesas información y priorizas.</p></div>
+    <div class="opts-label">Tu reacción real 👇</div>
+    <div class="opts">
+      <button class="opt o-teal" onclick="ans(5,'A')"><span class="oi">🎯</span><div class="ot"><b>Priorizo las métricas clave y descarto el resto</b><span>No necesito todo — necesito lo que responde la pregunta</span></div></button>
+      <button class="opt o-coral" onclick="ans(5,'B')"><span class="oi">⚡</span><div class="ot"><b>Me voy a las redes y analizo qué movió más a la gente</b><span>El comportamiento digital siempre cuenta una historia</span></div></button>
+      <button class="opt o-purple" onclick="ans(5,'C')"><span class="oi">💰</span><div class="ot"><b>Busco cuánto se generó vs cuánto se gastó, punto</b><span>En 24 horas, solo el dinero habla claro</span></div></button>
+      <button class="opt o-amber" onclick="ans(5,'D')"><span class="oi">📝</span><div class="ot"><b>Estructuro un resumen ejecutivo con lo más importante</b><span>Si lo presento bien, el caos no se nota tanto</span></div></button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Q6 (NUEVA) ── -->
+<div class="screen q-screen" id="q6">
+  <div class="prog-wrap"><div class="prog-top"><span>Pregunta 6 de 6</span><b>100%</b></div><div class="prog-bar"><div class="prog-fill" style="width:100%"></div></div></div>
+  <div class="q-top">
+    <div class="q-num">Situación 6 · La final</div>
+    <div class="q-text">Te ofrecen 4 proyectos. ¿Cuál <em>te emociona más?</em></div>
+  </div>
+  <div class="q-body">
+    <div class="psy-note"><span class="psy-icon">🧬</span><p class="psy-txt">Lo que te motiva naturalmente revela tu perfil más profundo — sin que lo sepas.</p></div>
+    <div class="opts-label">Escoge el tuyo 👇</div>
+    <div class="opts">
+      <button class="opt o-teal" onclick="ans(6,'A')"><span class="oi">🔭</span><div class="ot"><b>Analizar 2 años de ventas para encontrar qué productos tienen potencial</b><span>Quiero descubrir lo que nadie ha visto aún</span></div></button>
+      <button class="opt o-coral" onclick="ans(6,'B')"><span class="oi">🚀</span><div class="ot"><b>Crear un dashboard de métricas para una marca que está creciendo en redes</b><span>Me encanta ver cómo el contenido se convierte en números</span></div></button>
+      <button class="opt o-purple" onclick="ans(6,'C')"><span class="oi">🛍️</span><div class="ot"><b>Optimizar el funnel de ventas de una tienda online que tiene mucho tráfico pero pocas compras</b><span>Ahí está el dinero que se está escapando</span></div></button>
+      <button class="opt o-amber" onclick="ans(6,'D')"><span class="oi">🎨</span><div class="ot"><b>Transformar reportes aburridos en presentaciones que los directivos entiendan</b><span>Los datos deben contar una historia, no aburrir</span></div></button>
+    </div>
+  </div>
+</div>
+
+<!-- ── LOADING ── -->
+<div class="screen" id="loading">
+  <span class="load-brain">🧠</span>
+  <div class="load-title">Analizando tu mente...</div>
+  <p class="load-sub">Cruzando tus respuestas con los 4 perfiles de analista de datos</p>
+  <div class="load-bar-wrap"><div class="load-bar"></div></div>
+  <div class="load-dots">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
   </div>
 </div>
 
@@ -241,145 +335,270 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:var(--dark
     <span class="res-emoji" id="res-emoji">🧠</span>
     <div class="res-badge" id="res-badge">Perfil</div>
     <div class="res-title" id="res-title">Título</div>
-    <p class="res-sub" id="res-sub">Descripción</p>
+    <p class="res-wow" id="res-wow">Descripción</p>
   </div>
   <div class="res-body">
-    <div class="res-card">
-      <div class="res-card-title">Tus rasgos principales</div>
-      <div id="traits"></div>
+
+    <!-- diagnóstico profundo -->
+    <div class="diag-card" id="diag-card">
+      <div class="diag-accent" id="diag-accent"></div>
+      <div class="diag-label" id="diag-label">Tu perfil de analista</div>
+      <div class="diag-headline" id="diag-headline"></div>
+      <div class="diag-body" id="diag-body"></div>
+      <div class="trait-list" id="traits"></div>
     </div>
-    <div class="scores-wrap" id="scores"></div>
-    <div class="ig-box">
-      <div class="ig-title">¡Comparte tu resultado! 🚀</div>
-      <div class="ig-step"><div class="ig-num">1</div><div class="ig-txt">Toma captura de pantalla de esta pantalla 📸</div></div>
-      <div class="ig-step"><div class="ig-num">2</div><div class="ig-txt">Súbela a tu historia de Instagram</div></div>
-      <div class="ig-step"><div class="ig-num">3</div><div class="ig-txt">Etiqueta a <b>@valclabs</b> — te cuento el siguiente paso de tu ruta 🎯</div></div>
+
+    <!-- cargos -->
+    <div class="cargo-card">
+      <div class="cargo-label">💼 Cargos donde brillarías</div>
+      <div class="cargo-grid" id="cargos"></div>
     </div>
-    <a class="btn-ig" href="https://www.instagram.com/valclabs" target="_blank">Ir a etiquetar @valclabs →</a>
+
+    <!-- scores -->
+    <div class="scores-section">
+      <div class="scores-label">Tu mezcla de perfiles</div>
+      <div class="scores-wrap" id="scores"></div>
+    </div>
+
+    <!-- rasgos secundarios -->
+    <div class="sec-card" id="sec-card">
+      <div class="sec-label">🔀 También tienes rasgos de...</div>
+      <div id="secundarios"></div>
+    </div>
+
+    <!-- CTA compartir -->
+    <div class="share-card">
+      <div class="share-title">¡Tu resultado es oro! 🚀</div>
+      <p class="share-sub">Comparte en tu historia y descubre qué dice @valclabs sobre tu próximo paso</p>
+      <div class="share-steps">
+        <div class="share-step"><div class="step-num">1</div><div class="step-txt">Toma captura de esta pantalla 📸</div></div>
+        <div class="share-step"><div class="step-num">2</div><div class="step-txt">Toca el botón de abajo → se abre Instagram directo</div></div>
+        <div class="share-step"><div class="step-num">3</div><div class="step-txt">Sube a tu historia y etiqueta a <b>@valclabs</b> 🎯</div></div>
+      </div>
+      <a class="btn-historia" id="btn-historia" href="#" target="_blank">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Subir a mi historia de Instagram
+      </a>
+    </div>
+
     <button class="restart" onclick="restart()">Repetir el diagnóstico</button>
   </div>
 </div>
 
 <script>
 const answers = {};
+const TOTAL = 6;
 
 const perfiles = {
   A: {
     emoji: '📊',
-    nombre: 'Mente Analista',
-    badge: '📊 Analista de Datos',
+    badge: 'Perfil A · Analista de Datos',
     headerBg: '#F0FAF6',
-    badgeBg: '#D4F0E5',
-    badgeColor: '#085041',
-    titleColor: '#085041',
-    titulo: 'Eres del tipo <em style="color:#1D9E75">Analista de Datos</em>',
-    sub: 'Ves patrones donde otros ven números sueltos. Tu instinto es preguntar "¿por qué?" — y eso vale muchísimo.',
+    accentColor: '#1D9E75',
+    badgeBg: '#D4F0E5', badgeColor: '#085041',
+    titulo: 'Eres una <em style="color:#1D9E75">Mente Analítica Pura</em>',
+    wow: 'Tu cerebro está cableado para encontrar la verdad dentro del caos de números. Ves lo que otros no ven — y eso es un superpoder escaso y muy cotizado en el mercado.',
+    diagLabel: '🧠 Tu perfil de analista',
+    diagHeadline: 'Piensas en sistemas, no en síntomas',
+    diagBody: 'Cuando algo falla, tu instinto no es buscar culpables — es buscar el patrón. Tienes una tolerancia alta a la ambigüedad, pero una intolerancia total a las conclusiones sin evidencia. Eso te hace incómodo/a en reuniones de opiniones, pero invaluable cuando hay que tomar decisiones con datos reales.',
     rasgos: [
-      { color: '#1D9E75', text: 'Buscas la causa detrás de cada número' },
-      { color: '#1D9E75', text: 'Confías en los datos más que en la intuición' },
-      { color: '#1D9E75', text: 'Haces las preguntas que nadie más hace' },
-    ]
+      { text: '<b>Pensamiento causal:</b> siempre preguntas "¿por qué?" antes de "¿qué hacemos?"' },
+      { text: '<b>Alta tolerancia a la complejidad:</b> los problemas grandes no te paralizan, te activan' },
+      { text: '<b>Escepticismo productivo:</b> no aceptas un número sin cuestionarlo primero' },
+      { text: '<b>Orientación a la raíz:</b> prefieres arreglar el problema real, no el síntoma visible' },
+    ],
+    cargos: [
+      { icon: '📊', name: 'Data Analyst', desc: 'Análisis de datos para toma de decisiones estratégicas' },
+      { icon: '🔬', name: 'Business Intelligence Analyst', desc: 'Convierte datos complejos en inteligencia de negocio' },
+      { icon: '📐', name: 'Data Scientist Jr.', desc: 'Modelos predictivos y análisis estadístico avanzado' },
+    ],
+    cargoColor: '#E1F5EE', cargoBorder: '#1D9E75',
+    secColor: '#1D9E75',
   },
   B: {
     emoji: '📱',
-    nombre: 'Mente Digital',
-    badge: '📱 Métricas Digitales',
-    headerBg: '#EEEDFE',
-    badgeBg: '#D8D6FA',
-    badgeColor: '#3730A3',
-    titleColor: '#3730A3',
-    titulo: 'Eres del tipo <em style="color:#534AB7">Métricas Digitales</em>',
-    sub: 'Entiendes que detrás de cada like hay una persona real. Tu ojo para el contenido y los números digitales es tu superpoder.',
+    badge: 'Perfil B · Métricas Digitales',
+    headerBg: '#F0EFFE',
+    accentColor: '#534AB7',
+    badgeBg: '#D8D6FA', badgeColor: '#3730A3',
+    titulo: 'Eres una <em style="color:#534AB7">Mente Digital Estratégica</em>',
+    wow: 'Entiendes algo que muy pocos entienden: los datos digitales no son solo números — son comportamiento humano. Y tú sabes leer a las personas a través de sus clics.',
+    diagLabel: '🧠 Tu perfil de analista',
+    diagHeadline: 'Piensas en personas, no solo en métricas',
+    diagBody: 'Mientras otros ven impresiones y alcance, tú ves intención, emoción y comportamiento. Tu fortaleza no es solo analizar datos digitales — es entender qué los genera. Eso te convierte en un puente entre el marketing y la analítica, un rol que las empresas necesitan urgentemente y no saben cómo llenar.',
     rasgos: [
-      { color: '#534AB7', text: 'Conectas el contenido con los resultados reales' },
-      { color: '#534AB7', text: 'Entiendes cómo piensa la gente online' },
-      { color: '#534AB7', text: 'Ves oportunidades donde otros ven estadísticas' },
-    ]
+      { text: '<b>Empatía analítica:</b> lees los datos como si fueran conversaciones con usuarios reales' },
+      { text: '<b>Visión de contenido + datos:</b> conectas el mensaje con el resultado cuantitativo' },
+      { text: '<b>Pensamiento en ciclos:</b> siempre buscas qué se puede replicar del éxito pasado' },
+      { text: '<b>Orientación al comportamiento:</b> el "qué" te importa, pero el "quién lo hace" te obsesiona' },
+    ],
+    cargos: [
+      { icon: '📱', name: 'Social Media Analyst', desc: 'Analiza métricas de contenido y comportamiento digital' },
+      { icon: '📈', name: 'Digital Marketing Analyst', desc: 'Mide el impacto de campañas y optimiza en tiempo real' },
+      { icon: '🎯', name: 'Growth Analyst', desc: 'Identifica palancas de crecimiento en canales digitales' },
+    ],
+    cargoColor: '#EEEDFE', cargoBorder: '#534AB7',
+    secColor: '#534AB7',
   },
   C: {
     emoji: '🛒',
-    nombre: 'Mente E-commerce',
-    badge: '🛒 E-commerce Analytics',
-    headerBg: '#FFF5F2',
-    badgeBg: '#FFE0D6',
-    badgeColor: '#993C1D',
-    titleColor: '#993C1D',
-    titulo: 'Eres del tipo <em style="color:#D85A30">E-commerce Analytics</em>',
-    sub: 'Tu mente va directo al punto: ¿cuántos compraron? Sabes que los datos importan cuando hay dinero de por medio.',
+    badge: 'Perfil C · E-commerce Analytics',
+    headerBg: '#FFF3EE',
+    accentColor: '#D85A30',
+    badgeBg: '#FFE0D6', badgeColor: '#993C1D',
+    titulo: 'Eres una <em style="color:#D85A30">Mente de Negocio</em>',
+    wow: 'Tu cerebro siempre va al dinero — no por codicia, sino porque entiendes que los datos importan cuando tienen consecuencias reales. Eso es exactamente lo que buscan las empresas: alguien que conecte el análisis con el resultado.',
+    diagLabel: '🧠 Tu perfil de analista',
+    diagHeadline: 'Piensas en conversiones, no en vanidad',
+    diagBody: 'Cuando ves números, inmediatamente te preguntas: ¿y esto en cuánto dinero se traduce? Tienes una mentalidad de negocio que es rarísima en personas que trabajan con datos. La mayoría se queda en el análisis — tú siempre terminas en la decisión que tiene impacto económico real. Eso te hace tremendamente valioso/a.',
     rasgos: [
-      { color: '#D85A30', text: 'Piensas en conversiones, no solo en visitas' },
-      { color: '#D85A30', text: 'Encuentras dónde se pierden los clientes' },
-      { color: '#D85A30', text: 'Unes datos con decisiones de negocio reales' },
-    ]
+      { text: '<b>Mentalidad de ROI:</b> todo lo evalúas en términos de impacto económico concreto' },
+      { text: '<b>Foco en el funnel:</b> ves exactamente dónde se pierde el cliente y por qué' },
+      { text: '<b>Pragmatismo agudo:</b> no te pierdes en el análisis — vas directo a la acción' },
+      { text: '<b>Orientación al cliente:</b> entiendes el recorrido de compra mejor que nadie' },
+    ],
+    cargos: [
+      { icon: '🛒', name: 'E-commerce Analyst', desc: 'Optimiza funnels de ventas y experiencia de compra' },
+      { icon: '💰', name: 'Revenue Operations Analyst', desc: 'Maximiza ingresos analizando cada punto del proceso' },
+      { icon: '🔄', name: 'Conversion Rate Optimizer', desc: 'Aumenta el porcentaje de visitantes que se convierten en clientes' },
+    ],
+    cargoColor: '#FFF1EC', cargoBorder: '#D85A30',
+    secColor: '#D85A30',
   },
   D: {
     emoji: '📋',
-    nombre: 'Mente Comunicadora',
-    badge: '📋 Reportes para Equipos',
-    headerBg: '#FAEEDA',
-    badgeBg: '#FAE0B0',
-    badgeColor: '#7A4D00',
-    titleColor: '#7A4D00',
-    titulo: 'Eres del tipo <em style="color:#EF9F27">Reportes para Equipos</em>',
-    sub: 'Tu talento no es solo entender los datos — es hacer que otros los entiendan. Eso es raro y muy valioso en cualquier empresa.',
+    badge: 'Perfil D · Estratega de Datos',
+    headerBg: '#FDFAEE',
+    accentColor: '#EF9F27',
+    badgeBg: '#FAE0B0', badgeColor: '#7A4D00',
+    titulo: 'Eres una <em style="color:#EF9F27">Mente Estratégica Comunicadora</em>',
+    wow: 'Tienes el talento más escaso en el mundo de los datos: hacer que la gente entienda. No todos los analistas pueden comunicar — tú sí. Y eso en el mercado laboral vale una fortuna.',
+    diagLabel: '🧠 Tu perfil de analista',
+    diagHeadline: 'Piensas en audiencias, no solo en datos',
+    diagBody: 'Tu superpoder no es solo analizar — es traducir. Mientras otros se pierden en hojas de cálculo, tú ya estás pensando en cómo va a recibir esa información el director, el cliente o el equipo. Eso requiere inteligencia analítica Y emocional a la vez. Es una combinación poco común y muy demandada en roles de liderazgo de datos.',
     rasgos: [
-      { color: '#EF9F27', text: 'Conviertes lo complicado en algo simple' },
-      { color: '#EF9F27', text: 'Piensas siempre en quien va a recibir la información' },
-      { color: '#EF9F27', text: 'Tu claridad ayuda a los equipos a tomar mejores decisiones' },
-    ]
+      { text: '<b>Storytelling con datos:</b> conviertes números aburridos en narrativas que convencen' },
+      { text: '<b>Pensamiento en audiencia:</b> siempre preguntas "¿quién va a leer esto y qué necesita?"' },
+      { text: '<b>Síntesis estratégica:</b> sabes qué incluir y, más importante, qué dejar fuera' },
+      { text: '<b>Facilitación de decisiones:</b> no solo presentas datos — haces que otros actúen' },
+    ],
+    cargos: [
+      { icon: '📊', name: 'Analytics Manager', desc: 'Lidera equipos de datos y comunica insights a directivos' },
+      { icon: '🎯', name: 'Data Storyteller / BI Specialist', desc: 'Crea dashboards y reportes que realmente se leen' },
+      { icon: '🤝', name: 'Analytics Consultant', desc: 'Ayuda a empresas a tomar decisiones basadas en sus datos' },
+    ],
+    cargoColor: '#FAEEDA', cargoBorder: '#EF9F27',
+    secColor: '#EF9F27',
   }
+};
+
+const secInfo = {
+  A: { name: 'Analista de Datos', meaning: 'Cuando aparece, significa que también sabes buscar patrones profundos y hacer las preguntas correctas antes de actuar.' },
+  B: { name: 'Mente Digital', meaning: 'Cuando aparece, significa que también entiendes el comportamiento humano detrás de los números y conectas el contenido con los resultados.' },
+  C: { name: 'Mente de Negocio', meaning: 'Cuando aparece, significa que también tienes foco en resultados económicos concretos y nunca pierdes de vista el impacto real.' },
+  D: { name: 'Estratega Comunicadora', meaning: 'Cuando aparece, significa que también sabes cómo presentar la información para que otros la entiendan y actúen.' },
 };
 
 function ans(q, opt) {
   answers[q] = opt;
   const screen = document.getElementById('q' + q);
   screen.querySelectorAll('.opt').forEach(b => {
-    const isChosen = b.getAttribute('onclick').includes("'" + opt + "'");
-    b.classList.add(isChosen ? 'chosen' : 'unchosen');
+    const chosen = b.getAttribute('onclick').includes("'" + opt + "'");
+    b.classList.add(chosen ? 'chosen' : 'unchosen');
   });
   setTimeout(() => {
-    if (q < 4) go('q' + (q + 1));
-    else showResult();
-  }, 420);
+    if (q < TOTAL) go('q' + (q + 1));
+    else {
+      go('loading');
+      setTimeout(showResult, 2600);
+    }
+  }, 430);
 }
 
 function showResult() {
   const count = { A: 0, B: 0, C: 0, D: 0 };
   Object.values(answers).forEach(v => count[v]++);
-  const winner = Object.entries(count).sort((a, b) => b[1] - a[1])[0][0];
+  const sorted = Object.entries(count).sort((a, b) => b[1] - a[1]);
+  const winner = sorted[0][0];
   const p = perfiles[winner];
 
-  const header = document.getElementById('res-header');
-  header.style.background = p.headerBg;
-
+  // header
+  document.getElementById('res-header').style.background = p.headerBg;
   document.getElementById('res-emoji').textContent = p.emoji;
-
   const badge = document.getElementById('res-badge');
   badge.textContent = p.badge;
   badge.style.background = p.badgeBg;
   badge.style.color = p.badgeColor;
+  document.getElementById('res-title').innerHTML = p.titulo;
+  document.getElementById('res-wow').textContent = p.wow;
 
-  const title = document.getElementById('res-title');
-  title.innerHTML = p.titulo;
-  title.style.color = p.titleColor;
-
-  document.getElementById('res-sub').textContent = p.sub;
-
-  const traitsEl = document.getElementById('traits');
-  traitsEl.innerHTML = p.rasgos.map(r =>
-    `<div class="trait-row"><div class="trait-dot" style="background:${r.color}"></div><div class="trait-text">${r.text}</div></div>`
+  // diagnóstico
+  document.getElementById('diag-accent').style.background = p.accentColor;
+  document.getElementById('diag-label').style.color = p.accentColor;
+  document.getElementById('diag-headline').textContent = p.diagHeadline;
+  document.getElementById('diag-body').textContent = p.diagBody;
+  document.getElementById('traits').innerHTML = p.rasgos.map(r =>
+    `<div class="trait-row"><div class="trait-dot" style="background:${p.accentColor}"></div><div class="trait-text">${r.text}</div></div>`
   ).join('');
 
-  const total = 4;
-  const labels = { A: '📊 Analista', B: '📱 Métricas', C: '🛒 E-commerce', D: '📋 Reportes' };
+  // cargos
+  document.getElementById('cargos').innerHTML = p.cargos.map(c =>
+    `<div class="cargo-item" style="background:${p.cargoColor};border:1.5px solid ${p.cargoBorder}22">
+      <span class="cargo-icon">${c.icon}</span>
+      <div><div class="cargo-name">${c.name}</div><div class="cargo-desc">${c.desc}</div></div>
+    </div>`
+  ).join('');
+
+  // scores
+  const total = TOTAL;
+  const labels = { A: '📊 Analítica', B: '📱 Digital', C: '🛒 E-commerce', D: '📋 Estrategia' };
   const colors = { A: '#1D9E75', B: '#534AB7', C: '#D85A30', D: '#EF9F27' };
   document.getElementById('scores').innerHTML = Object.entries(count).map(([k, v]) =>
     `<div class="score-item">
-      <div class="score-label">${labels[k]}</div>
+      <div class="score-lbl">${labels[k]}</div>
       <div class="score-bar-wrap"><div class="score-bar" style="width:${Math.round(v/total*100)}%;background:${colors[k]}"></div></div>
       <div class="score-pct" style="color:${colors[k]}">${Math.round(v/total*100)}%</div>
     </div>`
   ).join('');
+
+  // secundarios con significado
+  const secondaries = sorted.filter(([k, v]) => k !== winner && v > 0);
+  const secEl = document.getElementById('secundarios');
+  if (secondaries.length === 0) {
+    document.getElementById('sec-card').style.display = 'none';
+  } else {
+    secEl.innerHTML = secondaries.map(([k, v]) => {
+      const pct = Math.round(v / total * 100);
+      const si = secInfo[k];
+      return `<div class="sec-row">
+        <div class="sec-pct" style="color:${colors[k]}">${pct}%</div>
+        <div class="sec-info">
+          <div class="sec-name">${si.name}</div>
+          <div class="sec-meaning">${si.meaning}</div>
+          <div class="sec-bar-wrap"><div class="sec-bar" style="width:${pct*2.5}%;background:${colors[k]}"></div></div>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  // botón a historias de Instagram
+  // Intenta abrir Instagram Stories directamente; en móvil abre la app
+  const igHandle = 'valclabs';
+  const igStoryUrl = `instagram://story-camera`; // intento app nativa
+  const igWebUrl = `https://www.instagram.com/${igHandle}`;
+  document.getElementById('btn-historia').addEventListener('click', function(e){
+    e.preventDefault();
+    // En móvil intenta abrir la cámara de historias de IG
+    const ua = navigator.userAgent.toLowerCase();
+    const isMobile = /android|iphone|ipad/.test(ua);
+    if(isMobile){
+      // Intento deep link a historia
+      window.location.href = 'instagram://camera';
+      setTimeout(()=>{ window.open(igWebUrl,'_blank'); }, 1500);
+    } else {
+      window.open(igWebUrl,'_blank');
+    }
+  });
 
   go('resultado');
 }
@@ -392,7 +611,7 @@ function go(id) {
 
 function restart() {
   Object.keys(answers).forEach(k => delete answers[k]);
-  document.querySelectorAll('.opt').forEach(b => b.classList.remove('chosen', 'unchosen'));
+  document.querySelectorAll('.opt').forEach(b => b.classList.remove('chosen','unchosen'));
   go('s0');
 }
 </script>
